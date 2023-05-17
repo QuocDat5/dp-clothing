@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // import icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faEye } from "@fortawesome/free-solid-svg-icons";
-// import { faEye } from "@fortawesome/free-regular-svg-icons";
 // import cart context
 import { CartContext } from "../contexts/CartContext";
 
