@@ -9,8 +9,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 // import link
 import { Link } from "react-router-dom";
 // logo
-import Se7enStore from "../img/Se7enStore.svg";
-import logo from "../img/logo.svg";
+import logo from "../assets/logo.svg";
 
 const Header = () => {
     // header state
