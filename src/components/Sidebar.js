@@ -39,7 +39,8 @@ const Sidebar = () => {
                 })}
             </div>
 
-            <div className="flex flex-col gap-y-3 py-4 mt-4">
+            {/* <div className="flex flex-col gap-y-3 py-4 mt-4"> */}
+            <div className="flex flex-col gap-y-3 py-4">
                 {/* total price & trashcan icon container */}
                 <div className="flex w-full justify-between items-center">
                     {/* total price (round to 2 decimals place) */}
