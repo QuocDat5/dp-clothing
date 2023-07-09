@@ -35,7 +35,13 @@ const Header = () => {
                 {/* logo */}
                 <Link to={"/"}>
                     <div>
-                        <img className="w-[40px]" src={logo} alt="Logo" />
+                        <img
+                            className={`${
+                                isActive ? "w-[30px]" : "w-[40px]"
+                            } transition-all`}
+                            src={logo}
+                            alt="Logo"
+                        />
                     </div>
                 </Link>
 
@@ -47,7 +53,9 @@ const Header = () => {
                     {/* cart icon */}
                     <FontAwesomeIcon
                         icon={faCartShopping}
-                        className="text-2xl"
+                        className={`${
+                            isActive ? "text-xl" : "text-2xl"
+                        } transition-all`}
                     />
 
                     {/* items amount on cart icon  */}
