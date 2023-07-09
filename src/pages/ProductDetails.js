@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 // import cart context
 import { CartContext } from "../contexts/CartContext";
 // import product context
@@ -16,10 +17,15 @@ const ProductDetails = () => {
         return item.id === parseInt(id);
     });
 
+    // scroll to the top of the page
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // if product can't be found
     if (!product) {
         return (
-            <section className="h-screen flex justify-center items-center">
+            <section className="h-screen flex justify-center items-center text-[26px]">
                 Loading...
             </section>
         );
@@ -36,20 +42,21 @@ const ProductDetails = () => {
                     {/* image */}
                     <div className="flex flex-1 justify-center items-center mb-8 lg:mb-0">
                         <img
-                            className="max-w-[200px] lg:max-w-sm"
+                            className="max-w-[200px] lg:max-w-sm hover:scale-105 duration-300"
                             src={image}
+                            alt="Product image"
                         />
                     </div>
 
                     {/* text */}
                     <div className="flex-1 text-center lg:text-left">
                         {/* title */}
-                        <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto">
+                        <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
                             {title}
                         </h1>
 
                         {/* price */}
-                        <div className="text-xl text-red-500 font-medium mb-6">
+                        <div className="text-2xl text-red-500 font-bold mb-6">
                             $ {price}
                         </div>
 
@@ -59,7 +66,7 @@ const ProductDetails = () => {
                         {/* add-to-cart button */}
                         <button
                             onClick={() => addToCart(product, product.id)}
-                            className="bg-neutral-900 py-4 px-8 text-white"
+                            className="bg-neutral-900 py-4 px-8 text-white font-medium hover:scale-110 duration-300"
                         >
                             Add to cart
                         </button>

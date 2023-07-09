@@ -61,7 +61,7 @@ const Sidebar = () => {
                 {/* checkout button */}
                 <Link
                     to="/checkout"
-                    className="bg-neutral-900 flex p-4 justify-center items-center text-white w-full font-medium"
+                    className="bg-neutral-900 flex p-4 justify-center items-center text-white w-full font-medium hover:scale-105 duration-300"
                 >
                     Checkout
                 </Link>
