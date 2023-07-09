@@ -45,6 +45,12 @@ const Header = () => {
                     </div>
                 </Link>
 
+                {isActive ? (
+                    <div className="text-lg font-semibold">DP Clothing</div>
+                ) : (
+                    <></>
+                )}
+
                 {/* cart section */}
                 <div
                     onClick={() => setIsOpen(!isOpen)}

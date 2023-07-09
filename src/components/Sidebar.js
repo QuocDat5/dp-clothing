@@ -33,39 +33,59 @@ const Sidebar = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-y-2 h-[520px] lg:h[640px] overflow-y-auto overflow-x-hidden border-b">
-                {cart.map((item) => {
-                    return <CartItem item={item} key={item.id} />;
-                })}
-            </div>
-
-            {/* <div className="flex flex-col gap-y-3 py-4 mt-4"> */}
-            <div className="flex flex-col gap-y-3 py-4">
-                {/* total price & trashcan icon container */}
-                <div className="flex w-full justify-between items-center">
-                    {/* total price (round to 2 decimals place) */}
-                    <div className="uppercase font-semibold">
-                        <span className="mr-2">Total:</span>${" "}
-                        {parseFloat(total).toFixed(2)}
+            {itemAmount != 0 ? (
+                <div>
+                    <div className="flex flex-col gap-y-2 h-[520px] lg:h[640px] overflow-y-auto overflow-x-hidden border-b">
+                        {cart.map((item) => {
+                            return <CartItem item={item} key={item.id} />;
+                        })}
                     </div>
 
-                    {/* trashcan icon (to clear cart) */}
-                    <div
-                        onClick={clearCart}
-                        className="cursor-pointer py-4 bg-red-500 text-white w-10 h-10 flex justify-center items-center text-xl"
-                    >
-                        <FontAwesomeIcon icon={faTrashCan} />
+                    <div className="flex flex-col gap-y-3 py-4">
+                        {/* total price & trashcan icon container */}
+                        <div className="flex w-full justify-between items-center">
+                            {/* total price (round to 2 decimals place) */}
+                            <div className="uppercase font-semibold">
+                                <span className="mr-2">Total:</span>${" "}
+                                {parseFloat(total).toFixed(2)}
+                            </div>
+
+                            {/* trashcan icon (to clear cart) */}
+                            <div
+                                onClick={clearCart}
+                                className="cursor-pointer py-4 bg-red-500 text-white w-10 h-10 flex justify-center items-center text-xl"
+                            >
+                                <FontAwesomeIcon icon={faTrashCan} />
+                            </div>
+                        </div>
+
+                        {/* checkout button */}
+                        <Link
+                            to="/checkout"
+                            className="bg-neutral-900 flex p-4 justify-center items-center text-white w-full font-medium hover:scale-105 duration-300"
+                        >
+                            Checkout
+                        </Link>
                     </div>
                 </div>
+            ) : (
+                <div className="pt-4">
+                    <h1 className="font-normal text-lg">
+                        Your cart is currently empty.
+                    </h1>
 
-                {/* checkout button */}
-                <Link
-                    to="/checkout"
-                    className="bg-neutral-900 flex p-4 justify-center items-center text-white w-full font-medium hover:scale-105 duration-300"
-                >
-                    Checkout
-                </Link>
-            </div>
+                    <h1 className="font-normal text-lg">
+                        Take at look at our{" "}
+                        <span
+                            className="text-red-500 font-semibold hover:underline"
+                            onClick={handleClose}
+                        >
+                            <a href="#our-products">products</a>
+                        </span>{" "}
+                        and discover your style.
+                    </h1>
+                </div>
+            )}
         </div>
     );
 };

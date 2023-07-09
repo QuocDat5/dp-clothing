@@ -23,7 +23,10 @@ const Home = () => {
     return (
         <div>
             <Hero />
-            <section className="py-16">
+
+            <section id="our-products" className="py-16">
+                <p className="text-4xl text-center mb-10">Our products</p>
+
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
                         {filteredProducts.map((product) => {
