@@ -12,10 +12,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 
+// toast messages container
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
     return (
         <div className="overflow-hidden">
             <Router>
+                <ToastContainer />
+
                 <Header />
 
                 <Routes>

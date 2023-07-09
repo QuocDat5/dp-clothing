@@ -33,6 +33,7 @@ const Sidebar = () => {
                 </div>
             </div>
 
+            {/* check if cart is empty or not */}
             {itemAmount != 0 ? (
                 <div>
                     <div className="flex flex-col gap-y-2 h-[520px] lg:h[640px] overflow-y-auto overflow-x-hidden border-b">

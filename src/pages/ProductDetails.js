@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { CartContext } from "../contexts/CartContext";
 // import product context
 import { ProductContext } from "../contexts/ProductContext";
+// toast messages
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
     // get product id from the url
@@ -30,6 +32,21 @@ const ProductDetails = () => {
             </section>
         );
     }
+
+    const handleAddToCart = () => {
+        addToCart(product, product.id);
+
+        toast.success("Added to cart.", {
+            position: "top-center",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+    };
 
     // destructure product
     const { title, price, description, image } = product;
@@ -65,7 +82,8 @@ const ProductDetails = () => {
 
                         {/* add-to-cart button */}
                         <button
-                            onClick={() => addToCart(product, product.id)}
+                            // onClick={() => addToCart(product, product.id)}
+                            onClick={handleAddToCart}
                             className="bg-neutral-900 py-4 px-8 text-white font-medium hover:scale-110 duration-300"
                         >
                             Add to cart
