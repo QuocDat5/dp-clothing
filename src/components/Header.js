@@ -10,6 +10,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 // logo
 import Se7enStore from "../img/Se7enStore.svg";
+import logo from "../img/logo.svg";
 
 const Header = () => {
     // header state
@@ -35,7 +36,7 @@ const Header = () => {
                 {/* logo */}
                 <Link to={"/"}>
                     <div>
-                        <img className="w-[40px]" src={Se7enStore} />
+                        <img className="w-[40px]" src={logo} />
                     </div>
                 </Link>
 
@@ -44,6 +45,7 @@ const Header = () => {
                     onClick={() => setIsOpen(!isOpen)}
                     className="cursor-pointer flex relative"
                 >
+                    {/* cart icon */}
                     <FontAwesomeIcon
                         icon={faCartShopping}
                         className="text-2xl"
