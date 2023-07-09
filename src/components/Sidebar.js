@@ -52,18 +52,11 @@ const Sidebar = () => {
                     {/* trashcan icon (to clear cart) */}
                     <div
                         onClick={clearCart}
-                        className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl"
+                        className="cursor-pointer py-4 bg-red-500 text-white w-10 h-10 flex justify-center items-center text-xl"
                     >
                         <FontAwesomeIcon icon={faTrashCan} />
                     </div>
                 </div>
-
-                {/* <Link
-                    to="/"
-                    className="bg-gray-200 flex p-4 justify-center items-center text-primary w-full font-medium"
-                >
-                    View cart
-                </Link> */}
 
                 {/* checkout button */}
                 <Link
