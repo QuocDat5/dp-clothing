@@ -8,7 +8,7 @@ const Hero = () => {
     return (
         <section className="bg-pink-200 h-[800px] bg-hero bg-no-repeat bg-cover bg-center py-24">
             <div className="container mx-auto flex justify-around h-full">
-                {/* text */}
+                {/* text section */}
                 <div className="flex flex-col justify-center">
                     {/* pre-title */}
                     <div className="font-semibold flex items-center uppercase">
