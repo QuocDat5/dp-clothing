@@ -19,7 +19,11 @@ const CartItem = ({ item }) => {
             <div className="w-full min-h-[150px] flex items-center gap-x-4">
                 {/* image */}
                 <Link to={`/product/${id}`}>
-                    <img className="max-w-[80px]" src={image}></img>
+                    <img
+                        className="max-w-[80px]"
+                        src={image}
+                        alt={`Product ${id}'s image`}
+                    />
                 </Link>
 
                 <div className="w-full flex flex-col">
@@ -28,10 +32,11 @@ const CartItem = ({ item }) => {
                         {/* title */}
                         <Link
                             to={`/product/${id}`}
-                            className="text-sm uppercase font-medium max-w-[240px] text-primary hover:underline"
+                            className="text-sm font-medium max-w-[240px] text-neutral-900 hover:underline"
                         >
                             {title}
                         </Link>
+
                         {/* remove icon (to remove item from cart) */}
                         <div
                             onClick={() => removeFromCart(id)}
@@ -47,14 +52,14 @@ const CartItem = ({ item }) => {
                     {/* quantity, item price  & final price */}
                     <div className="flex gap-x-2 h-[36px] text-sm">
                         {/* quantity */}
-                        <div className="flex flex-1 max-w-[100px] items-center h-full border text-primary font-medium">
+                        <div className="flex flex-1 max-w-[100px] items-center h-full border text-neutral-900 font-medium">
                             {/* minus icon */}
-                            <div
+                            <button
                                 onClick={() => decreaseAmount(id)}
                                 className="flex-1 flex justify-center items-center cursor-pointer h-full"
                             >
                                 <FontAwesomeIcon icon={faMinus} />
-                            </div>
+                            </button>
 
                             {/* amount */}
                             <div className="h-full flex justify-center items-center px-2">
@@ -62,12 +67,12 @@ const CartItem = ({ item }) => {
                             </div>
 
                             {/* plus icon */}
-                            <div
+                            <button
                                 onClick={() => increaseAmount(id)}
                                 className="flex-1 flex justify-center items-center cursor-pointer h-full"
                             >
                                 <FontAwesomeIcon icon={faPlus} />
-                            </div>
+                            </button>
                         </div>
 
                         {/* item price */}
@@ -76,7 +81,7 @@ const CartItem = ({ item }) => {
                         </div>
 
                         {/* final price (round to 2 decimals place) */}
-                        <div className="flex-1 flex justify-end items-center text-primary font-bold">{`$ ${parseFloat(
+                        <div className="flex-1 flex justify-end items-center text-neutral-900 font-bold">{`$ ${parseFloat(
                             price * amount
                         ).toFixed(2)}`}</div>
                     </div>

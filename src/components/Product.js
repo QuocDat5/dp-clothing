@@ -52,11 +52,11 @@ const Product = ({ product }) => {
                     {category}
                 </div>
 
-                <Link to={`/product/{id}`}>
+                <Link to={`/product/${id}`}>
                     <h2 className="font-semibold mb-1">{title}</h2>
                 </Link>
 
-                <h2 className="font-medium">$ {price}</h2>
+                <h2 className="font-medium text-green-500">$ {price}</h2>
             </div>
         </div>
     );
