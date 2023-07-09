@@ -9,11 +9,12 @@ const Home = () => {
     // get products from product context
     const { products } = useContext(ProductContext);
 
-    // get only men & women clothing category
+    // get only men clothing, women clothing, & jewelry category
     const filteredProducts = products.filter((item) => {
         return (
             item.category === "men's clothing" ||
-            item.category === "women's clothing"
+            item.category === "women's clothing" ||
+            item.category === "jewelery"
         );
     });
     console.log(filteredProducts);
