@@ -21,7 +21,7 @@ const ProductDetails = () => {
 
     // scroll to the top of the page
     useEffect(() => {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     // if product can't be found
@@ -82,7 +82,6 @@ const ProductDetails = () => {
 
                         {/* add-to-cart button */}
                         <button
-                            // onClick={() => addToCart(product, product.id)}
                             onClick={handleAddToCart}
                             className="bg-neutral-900 py-4 px-8 text-white font-medium hover:scale-110 duration-300"
                         >
