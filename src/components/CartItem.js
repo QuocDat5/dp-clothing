@@ -6,10 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 // import cart context
 import { CartContext } from "../contexts/CartContext";
+// import sidebar context
+import { SidebarContext } from "../contexts/SidebarContext";
 
 const CartItem = ({ item }) => {
     const { removeFromCart, increaseAmount, decreaseAmount } =
         useContext(CartContext);
+    const { handleClose } = useContext(SidebarContext);
 
     // destructure item
     const { id, title, image, price, amount } = item;
@@ -18,7 +21,7 @@ const CartItem = ({ item }) => {
         <div className="flex gap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light">
             <div className="w-full min-h-[150px] flex items-center gap-x-4">
                 {/* image */}
-                <Link to={`/product/${id}`}>
+                <Link to={`/product/${id}`} onClick={handleClose}>
                     <img
                         className="max-w-[80px]"
                         src={image}
@@ -33,6 +36,7 @@ const CartItem = ({ item }) => {
                         <Link
                             to={`/product/${id}`}
                             className="text-sm font-medium max-w-[240px] text-neutral-900 hover:underline"
+                            onClick={handleClose}
                         >
                             {title}
                         </Link>
