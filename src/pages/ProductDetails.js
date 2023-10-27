@@ -83,7 +83,7 @@ const ProductDetails = () => {
                         {/* add-to-cart button */}
                         <button
                             onClick={handleAddToCart}
-                            className="bg-neutral-900 py-4 px-8 text-white font-medium hover:scale-110 duration-300"
+                            className="bg-neutral-900 py-4 px-8 text-white font-medium hover:bg-white hover:text-neutral-900 hover:scale-105 hover:border-2 hover:border-black duration-300 animate-bounce"
                         >
                             Add to cart
                         </button>
