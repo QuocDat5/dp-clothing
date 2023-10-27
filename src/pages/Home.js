@@ -5,6 +5,9 @@ import { ProductContext } from "../contexts/ProductContext";
 // import product
 import Product from "../components/Product";
 import Hero from "../components/Hero";
+// import icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -59,10 +62,10 @@ const Home = () => {
 
             {showScrollButton && (
                 <button
-                    className="fixed bottom-6 right-6 bg-gray-800 text-white font-semibold rounded-2xl py-3 px-5 drop-shadow-lg"
+                    className="fixed bottom-6 right-6 bg-gray-800 text-white text-2xl font-semibold rounded-2xl drop-shadow-lg w-14 h-14"
                     onClick={scrollToTop}
                 >
-                    Back to top
+                    <FontAwesomeIcon icon={faArrowUp} />
                 </button>
             )}
         </div>
